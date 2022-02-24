@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
-import RealExampleRef from './components/04-useRef/RealExampleRef';
+import MemoHook from './components/05-memos/MemoHook';
 
 
-ReactDOM.render(<RealExampleRef />, document.getElementById('root'));
+
+ReactDOM.render(<MemoHook />, document.getElementById('root'));
 
