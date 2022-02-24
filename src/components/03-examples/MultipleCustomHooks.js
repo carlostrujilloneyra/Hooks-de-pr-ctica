@@ -26,7 +26,8 @@ const MultipleCustomHooks = () => {
         </blockquote>
       )}
 
-	  <button className="btn btn-primary" 
+	  <button 
+    className="btn btn-primary" 
 	  onClick={ increment }
 	  >Siguiente quote
 	  </button>
