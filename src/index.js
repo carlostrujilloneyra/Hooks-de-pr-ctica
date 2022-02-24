@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
-import MemoHook from './components/05-memos/MemoHook';
+import CallbackHook from './components/05-memos/CallbackHook';
 
 
-
-ReactDOM.render(<MemoHook />, document.getElementById('root'));
+ReactDOM.render(<CallbackHook/>, document.getElementById('root'));
 
