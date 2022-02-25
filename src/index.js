@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
-import CallbackHook from './components/05-memos/CallbackHook';
+import Probando from './components/05-memos/Probando';
 
 
-ReactDOM.render(<CallbackHook/>, document.getElementById('root'));
+ReactDOM.render(<Probando/>, document.getElementById('root'));
 

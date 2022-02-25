@@ -1,9 +1,14 @@
+import React from "react";
 
+const Small = React.memo(( {value} ) => {
 
-const Small = ( {value} ) => {
+  console.log('Ejecutando el componente hijo');
+
   return (
-	<small> { value } </small>
+	<h3> { value } </h3>
   )
-}
+})
+
+console.log(Small)
 
 export default Small;
