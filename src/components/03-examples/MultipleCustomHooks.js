@@ -10,6 +10,8 @@ const MultipleCustomHooks = () => {
 
 	const { author, quote } = (!loading && data.length > 0) && data[0];
 
+  const element = externalRef ? externalRef.current : fromRef.current
+
 	return (
     <div>
       <h2>BreakingBad useFetch</h2>
