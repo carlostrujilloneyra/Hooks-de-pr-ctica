@@ -1,6 +1,8 @@
 import { useReducer, useState } from 'react';
 import { todoReducer } from './todoReducer';
+import StyleItem from '../styles/Item.styled';
 import './styles.scss';
+import StyleList from '../styles/List.styled';
 
 // Estado inicial
 const initialState = [{
@@ -20,14 +22,14 @@ const TodoApp = () => {
 			<h1>TodoApp ({ todos.length })</h1>
 			<hr/>
 
-			<ul>
+			<StyleList>
 				{
 					todos.map(todo => {
 						const { id, desc, done } = todo;
-						return <li key={id}>{desc}</li> ;
+						return <StyleItem key={id}>{desc}</StyleItem> ;
 					})
 				}
-			</ul>
+			</StyleList>
 		</div>
   )
 }
