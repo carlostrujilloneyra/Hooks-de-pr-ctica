@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
-import Probando from './components/05-memos/Probando';
+import TodoApp from './components/06-useReducer/TodoApp';
 
 
-ReactDOM.render(<Probando/>, document.getElementById('root'));
-
+ReactDOM.render(<TodoApp/>, document.getElementById('root'));
