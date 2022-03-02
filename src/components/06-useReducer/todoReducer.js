@@ -1,12 +1,13 @@
+import { initialState } from "./TodoApp";
 
-export const todoReducer = (state = [], action) => {
+
+export const todoReducer = (state =  initialState, action) => {
 	switch (action.type) {
 		case ('add'):
-			break;
-			
-			default:
-				return state;
+		return [...state, action.payload];
+		
+		default:
+			return state;
 	}
-
 
 }

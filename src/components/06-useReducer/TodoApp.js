@@ -1,24 +1,40 @@
-import { useReducer, useState } from 'react';
+import { useReducer } from 'react';
 import { todoReducer } from './todoReducer';
 import StyleItem from '../styles/Item.styled';
 import StyleContainer from '../styles/Container.styled';
 import './styles.scss';
 
-
 // Estado inicial
-const initialState = [{
+export const initialState = [{
 	id:new Date().getTime(),
 	desc: 'Aprender React',
 	done: false
 }];
 
 const TodoApp = () => {
-	// const [state, dispatch] = useReducer(reducer, initialState, init);
 	
 	// Forma más simple
 
-	const [ todos ] = useReducer(todoReducer, initialState);
-	console.log(todos)
+	const [ todos, dispatch ] = useReducer(todoReducer, initialState);
+	
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		const newTodo = {
+			id:new Date().getTime(),
+			desc: 'Nueva tarea',
+			done: false
+		}
+
+		const action = {
+			type: 'add',
+			payload: newTodo
+		}
+
+		dispatch(action);
+	
+	}
+
 	return (
 		<>
 			<h1>TodoApp ({ todos.length })</h1>
@@ -29,8 +45,12 @@ const TodoApp = () => {
 					{
 						todos.map(todo => {
 							const { id, desc, done } = todo;
-							return <StyleItem key={id}> {desc}
-									<button className='btn btn-danger delete'>Eliminar</button>	
+							return <StyleItem key={id}> <p>{desc}
+									<button 
+										className='btn btn-danger delete'
+									>	Eliminar
+									</button>	
+									</p>
 							  	   </StyleItem> ;
 							})
 					
@@ -40,7 +60,7 @@ const TodoApp = () => {
 				<div>
 					<h4>Agregar TODO</h4>
 					<hr />
-					<form>
+					<form onSubmit={ handleSubmit }>
 						<input type="text" 
 							name="description" 
 							className='form-control'
@@ -49,6 +69,7 @@ const TodoApp = () => {
 						/>
 						<button 
 							className='btn btn-outline-primary mt-3 w-100'
+							type='submit'
 						>
 							Agregar
 						</button>
