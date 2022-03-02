@@ -5,7 +5,7 @@ import StyleContainer from '../styles/Container.styled';
 import './styles.scss';
 
 // Estado inicial
-export const initialState = [{
+const initialState = [{
 	id:new Date().getTime(),
 	desc: 'Aprender React',
 	done: false
@@ -16,7 +16,7 @@ const TodoApp = () => {
 	// Forma más simple
 
 	const [ todos, dispatch ] = useReducer(todoReducer, initialState);
-	
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
