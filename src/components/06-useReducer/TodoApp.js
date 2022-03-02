@@ -70,6 +70,21 @@ const TodoApp = () => {
 		dispatch(action);
 	}
 
+	// Toggle
+	const handleToggle = (todoId) =>{
+		
+		const action = {
+			type: 'toggle',
+			payload: todoId
+		}
+
+		dispatch(action);
+		// Otra forma más simple de hacer:
+		/* dispatch({
+			 type: 'toggle',
+			 payload: todoId
+		})*/
+	}
 
 	return (
 		<>
@@ -79,10 +94,14 @@ const TodoApp = () => {
 			<StyleContainer>
 				<ul>
 					{
-						todos.map(todo => {
+						todos.map((todo, index) => {
 							const { id, desc, done } = todo;
-							return <StyleItem key={id}> 
-									<p>{desc}
+							return <StyleItem key={id}>
+									<p 
+										className= { `${ done && 'complete'}` }
+										onClick={ () => handleToggle(id) }									
+									> { index + 1 }. {desc} 
+
 									<button 
 										className='btn btn-danger delete'
 										onClick={ () => handelDelete(id) }
