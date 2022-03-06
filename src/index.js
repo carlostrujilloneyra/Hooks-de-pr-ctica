@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import TodoApp from './components/06-useReducer/TodoApp';
+import MainApp from './components/07-useContext/MainApp';
 
 
-ReactDOM.render(<TodoApp/>, document.getElementById('root'));
+ReactDOM.render(<MainApp/>, document.getElementById('root'));
