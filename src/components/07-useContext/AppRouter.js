@@ -21,6 +21,8 @@ const AppRouter = () => {
 				<Route path = "/" element= {<HomeScreen/>} />
 				<Route path = "/about" element= {<AboutScreen/>} />
 				<Route path = "/login" element= {<LoginScreen/>} />
+				{/* Cuando no haya ruta se ejecuta lo de abajo: */}
+				<Route path='*' element= {<HomeScreen/>} />
 			</Routes>
 		</div>
 	</Router>
